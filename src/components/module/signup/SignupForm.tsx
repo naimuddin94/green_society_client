@@ -40,8 +40,7 @@ const SignupForm = () => {
     if (image) {
       userData.image = image;
     }
-    // eslint-disable-next-line prefer-const
-    for (let item in userData) {
+    for (const item in userData) {
       formData.append(item, userData[item]);
     }
 

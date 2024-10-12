@@ -1,26 +1,27 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@nextui-org/button";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { FieldValues } from "react-hook-form";
-
 import GSForm from "@/components/form/GSForm";
 import GSInput from "@/components/form/GSInput";
 import Loading from "@/components/ui/Loading";
 import { useUser } from "@/context/user.provider";
 import { useUserSignin } from "@/hooks/auth.hook";
 import signinValidationSchema from "@/schemas/signin.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@nextui-org/react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { FieldValues } from "react-hook-form";
 
 const SigninForm = () => {
-  const searchParams = useSearchParams();
   const router = useRouter();
-  const { setIsLoading: userLoading } = useUser();
+  const searchParams = useSearchParams();
 
   const redirect = searchParams.get("redirect");
 
+  const { setIsLoading: userLoading } = useUser();
+
   const { mutate: signinFn, isPending, isSuccess } = useUserSignin();
+
   const handleLogin = async (data: FieldValues) => {
     signinFn(data);
     userLoading(true);

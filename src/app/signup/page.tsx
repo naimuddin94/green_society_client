@@ -1,9 +1,8 @@
+import SignupForm from "@/components/module/signup/SignupForm";
+import Loading from "@/components/ui/Loading";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
 import Link from "next/link";
-
-import Loading from "@/components/ui/Loading";
 import { Suspense } from "react";
-import SignupForm from "./_components/SignupForm";
 
 export default function SignupPage() {
   return (
