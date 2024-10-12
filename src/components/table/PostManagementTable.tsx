@@ -12,8 +12,8 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-import DeleteModal from "../../../../components/ui/DeleteModal";
-import Loading from "../../../../components/ui/Loading";
+import DeleteModal from "../ui/DeleteModal";
+import Loading from "../ui/Loading";
 
 interface PostManagementTableProps {
   posts: IPost[];

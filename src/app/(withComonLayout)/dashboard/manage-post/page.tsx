@@ -1,8 +1,8 @@
+import PostManagementTable from "@/components/table/PostManagementTable";
 import Loading from "@/components/ui/Loading";
 import { getAllPosts } from "@/services/Post.service";
 import { IPost } from "@/types";
 import { Suspense } from "react";
-import PostManagementTable from "./PostManagementTable";
 
 const ManagePost = async () => {
   const data = await getAllPosts();

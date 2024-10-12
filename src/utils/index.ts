@@ -1,5 +1,3 @@
-"use client";
-
 export const extractH1Content = (htmlContent: string): string | null => {
   if (typeof window !== "undefined") {
     const parser = new DOMParser();
