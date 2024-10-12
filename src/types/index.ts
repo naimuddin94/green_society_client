@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode, SVGProps } from "react";
 
 export interface IChildrenProps {
