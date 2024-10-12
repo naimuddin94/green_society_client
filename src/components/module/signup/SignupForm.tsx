@@ -56,6 +56,7 @@ const SignupForm = () => {
         router.push("/");
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPending, isSuccess]);
 
   return (
