@@ -1,5 +1,8 @@
 "use client";
 
+import { usePostPremium } from "@/hooks/post.hook";
+import { IPost } from "@/types";
+import { extractH1Content } from "@/utils";
 import {
   Checkbox,
   Table,
@@ -9,13 +12,8 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-
-import DeleteModal from "../ui/DeleteModal";
-import Loading from "../ui/Loading";
-
-import { usePostPremium } from "@/hooks/post.hook";
-import { IPost } from "@/types";
-import { extractH1Content } from "@/utils";
+import DeleteModal from "../../../../components/ui/DeleteModal";
+import Loading from "../../../../components/ui/Loading";
 
 interface PostManagementTableProps {
   posts: IPost[];
