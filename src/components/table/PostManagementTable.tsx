@@ -32,7 +32,7 @@ const PostManagementTable = ({ posts }: PostManagementTableProps) => {
       <Table aria-label="Admin Post Management Table" className="w-full">
         <TableHeader>
           <TableColumn>Author</TableColumn>
-          <TableColumn>Content</TableColumn>
+          <TableColumn>Time</TableColumn>
           <TableColumn>Category</TableColumn>
           <TableColumn>Premium</TableColumn>
           <TableColumn>Actions</TableColumn>
