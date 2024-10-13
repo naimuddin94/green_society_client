@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Green Society",
   description: "Gardening Tips & Advice Platform",
   icons: {
-    icon: "favicon.ico",
+    icon: "@/app/favicon.ico",
   },
 };
 
