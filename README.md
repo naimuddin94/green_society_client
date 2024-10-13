@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+🌿 Green Society - Gardening Tips & Advice Platform
 
-First, run the development server:
+Welcome to the Green Society frontend project! This platform is designed to connect gardening enthusiasts and professionals, offering a space to share knowledge, interact, and access premium content. The Green Society frontend is developed using Next.js and NextUI, providing a modern, responsive, and user-friendly experience.
+
+🚀 Features
+
+- User Authentication: Secure login and registration system for users to access premium content and features.
+
+- Premium Content Access: Premium users can unlock exclusive gardening tips and advice from experts.
+- Social Interaction: Users can upvote, comment on posts, and follow others to stay engaged with the community. 
+
+- Mobile-Friendly Design: The platform is optimized for all devices, ensuring a seamless experience across smartphones, tablets, and desktops.
+
+- Real-Time Updates: Stay updated with real-time notifications for new posts, comments, and premium content releases.
+
+
+## Project Link
+[![Live Link](https://img.shields.io/badge/API-Live-brightgreen?style=for-the-badge)](https://green-society-client.vercel.app/)
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/naimuddin94/green_society_client.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd green_society_client
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Set environment variables fllowing env.exaple file
 
-## Learn More
+Install dependencies
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  yarn install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the server development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+  yarn dev
+```
 
-## Deploy on Vercel
+Build project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+  yarn build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🔗 Documentation
+[![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://documenter.getpostman.com/view/34122341/2sAXxS9BtK)
+
