@@ -2,6 +2,7 @@
 
 import { usePostPremium } from "@/hooks/post.hook";
 import { IPost } from "@/types";
+import { extractH1Content } from "@/utils";
 import {
   Checkbox,
   Table,
@@ -11,7 +12,6 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-import moment from "moment";
 import DeleteModal from "../ui/DeleteModal";
 import Loading from "../ui/Loading";
 
@@ -41,7 +41,7 @@ const PostManagementTable = ({ posts }: PostManagementTableProps) => {
           {posts.map((post) => (
             <TableRow key={post._id}>
               <TableCell>{post.author.name}</TableCell>
-              <TableCell>{moment(post.updatedAt).fromNow()}</TableCell>
+              <TableCell>{extractH1Content(post.content)}</TableCell>
               <TableCell>{post.category}</TableCell>
               <TableCell>
                 <Checkbox
