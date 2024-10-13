@@ -4,15 +4,17 @@
 import { revalidateTag } from "next/cache";
 import { FieldValues } from "react-hook-form";
 
-import { envConfig } from "@/config";
 import axiosInstance from "../lib/axiosInstance";
 
 export const getAllPosts = async () => {
-  const res = await fetch(`${envConfig.api_host}/posts`, {
-    next: {
-      tags: ["posts"],
-    },
-  });
+  const res = await fetch(
+    "https://green-society-backend.vercel.app/api/v1/posts",
+    {
+      next: {
+        tags: ["posts"],
+      },
+    }
+  );
 
   const data = await res.json();
   return data;

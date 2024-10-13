@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { envConfig } from "@/config";
 import axios from "axios";
 import { cookies } from "next/headers";
 
 const axiosInstance = axios.create({
-  baseURL: envConfig.api_host,
+  baseURL: "https://green-society-backend.vercel.app/api/v1",
   withCredentials: true,
 });
 

@@ -1,8 +1,7 @@
-import { redirect } from "next/navigation";
 import PostCard from "@/components/module/dashboard/PostCard";
-import { envConfig } from "@/config";
 import { getCurrentUser } from "@/services/AuthService";
 import { IPost } from "@/types";
+import { redirect } from "next/navigation";
 
 const MyPostPage = async () => {
   const user = await getCurrentUser();
@@ -11,11 +10,14 @@ const MyPostPage = async () => {
     return redirect("/signin?redirect=dashboard/my-post");
   }
 
-  const res = await fetch(`${envConfig.api_host}/posts?author=${user?._id}`, {
-    next: {
-      tags: ["posts"],
-    },
-  });
+  const res = await fetch(
+    `https://green-society-backend.vercel.app/api/v1/posts?author=${user?._id}`,
+    {
+      next: {
+        tags: ["posts"],
+      },
+    }
+  );
 
   if (!res.ok) {
     return <div>Failed to load posts</div>;
