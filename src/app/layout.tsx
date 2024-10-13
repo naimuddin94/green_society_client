@@ -1,5 +1,4 @@
 import { fontSans } from "@/config/fonts";
-import { siteConfig } from "@/config/site";
 import clsx from "clsx";
 import { Metadata, Viewport } from "next";
 
@@ -7,13 +6,10 @@ import Providers from "@/providers";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
+  title: "Green Society",
+  description: "Gardening Tips & Advice Platform",
   icons: {
-    icon: "/favicon.ico",
+    icon: "favicon.ico",
   },
 };
 
