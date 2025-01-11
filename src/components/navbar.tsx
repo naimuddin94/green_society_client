@@ -1,5 +1,8 @@
 "use client";
 
+import { SearchIcon } from "@/components/icons";
+import { siteConfig } from "@/config/site";
+import { useUser } from "@/context/user.provider";
 import {
   NavbarBrand,
   NavbarContent,
@@ -9,15 +12,13 @@ import {
   NavbarMenuToggle,
   Navbar as NextUINavbar,
 } from "@nextui-org/navbar";
+import { Button, Input } from "@nextui-org/react";
 import { link as linkStyles } from "@nextui-org/theme";
 import clsx from "clsx";
+import Image from "next/image";
 import { default as Link, default as NextLink } from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import NavbarDropdown from "./NavbarDropdown";
-import { Logo, SearchIcon } from "@/components/icons";
-import { Button, Input } from "@nextui-org/react";
-import { useUser } from "@/context/user.provider";
-import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
   const searchInput = (
@@ -49,7 +50,7 @@ export const Navbar = () => {
             className="flex justify-start items-center gap-1 text-current no-underline"
             href="/"
           >
-            <Logo />
+            <Image src="./logo.png" alt="Logo image" width={80} height={80} />
             <p className="font-bold text-inherit text-lg">Green Society</p>
           </NextLink>
         </NavbarBrand>
@@ -59,7 +60,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -97,7 +98,9 @@ export const Navbar = () => {
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                className={`${pathname === item?.href && "text-primary"} no-underline text-current`}
+                className={`${
+                  pathname === item?.href && "text-primary"
+                } no-underline text-current`}
                 href={item?.href || "#"}
               >
                 {item?.label}
