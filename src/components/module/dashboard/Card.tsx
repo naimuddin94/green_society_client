@@ -1,19 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  FileText,
-  ListCollapse,
-  MessageSquareText,
-  Share2,
-  ThumbsDown,
-  ThumbsUp,
-  Trash2,
-} from "lucide-react";
-import moment from "moment";
-import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
-import { toast } from "sonner";
 import DeleteModal from "@/components/ui/DeleteModal";
 import ImageGallery from "@/components/ui/ImageGallery";
 import { useUser } from "@/context/user.provider";
@@ -31,6 +17,20 @@ import {
   CardHeader,
   Input,
 } from "@nextui-org/react";
+import { motion } from "framer-motion";
+import {
+  FileText,
+  ListCollapse,
+  MessageSquareText,
+  Share2,
+  ThumbsDown,
+  ThumbsUp,
+  Trash2,
+} from "lucide-react";
+import moment from "moment";
+import { useRouter } from "next/navigation";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
 
 interface IPostCardProps {
   post: IPost;
@@ -50,22 +50,9 @@ const PostCard = ({ post }: IPostCardProps) => {
   const { mutate: deleteComment } = useDeleteComment();
   const contentRef = useRef(null);
 
-  // Generate PDF file
-//   const handleGeneratePDF = async () => {
-//     const contentEl = contentRef.current;
-
-//     if (contentEl) {
-//       const options = {
-//         margin: 0.2,
-//         filename: `${post.author.name + "'s_post"}.pdf`,
-//         image: { type: "jpeg", quality: 0.98 },
-//         html2canvas: { scale: 2, useCORS: true },
-//         jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-//       };
-
-//       html2pdf().from(contentEl).set(options).save();
-//     }
-//   };
+  if (!user) {
+    return router.push("/signin?redirect=post");
+  }
 
   // Copy post link to clipboard
   const handleShare = () => {
